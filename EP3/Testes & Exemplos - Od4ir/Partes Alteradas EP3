@@ -1,0 +1,207 @@
+   
+   /*
+    printf("Olá Usuárix, tudo bem?\n");
+    printf("Bem vindx ao Manipulador de Imagens Od4ir\n\n");
+    printf("Por favor, escolha uma opção: \n");
+    printf("Q - Quit (terminar o programa)\n");
+    printf("L Ler um arquivo de imagens\n");
+    printf("S Salvar a imagem em arquivo\n");
+    printf("M Manter a imagem-entrada anterior\n");
+    printf("B Binarizar a imagem-entrada\n");
+    printf("C Calcular Contorno da imagem-entrada\n");
+    printf("F Filtrar a imagem-entrada\n");
+    printf("I Inverter a imagem-entrada\n");
+    printf("R Rotular a imagem-entrada\n\n");
+
+    scanf("%s", opcao);
+    if(opcao == "L") {
+        printf("Voce escolheu Ler um arquivo!\n");
+    }
+    if(opcao == "S") {
+        printf("Salvar um arquivo?");
+    }
+
+
+//Parte Função Filtro: 
+    for(i = num; i < num + h - 1; i++) {
+        for( j = num; j < num + w - 1; j++) {
+            //printf("Elemento central: %d\n", Ifilt[i*] )
+            for(i1 = i - num; i1 < i + num; i1++) {
+                for(j1 = j - num; j1 < j + num; j1++) {
+                    V[k] = Ifilt[i1*(2*num + w) + j1];
+                    k++;
+                    if(k == d*d) {
+                        selection_sort(V, d*d);
+                        printf("Vetor ordenado: ");
+                        for(i = 0; i < d*d; i++) {
+                            printf("%d ", V[i]);
+                        }
+                        printf("\n");
+                        if(tipo == 1) {
+                            Ifilt[i*(2*num + w) + j] = V[0];
+                            printf("Mímino: %d\n", V[0]);
+                        }
+                        else if(tipo == 2) {
+                            Ifilt[i*(2*num + w) + j] = V[(d*d - 1)/2];
+                            printf("%d\n", V[(d*d - 1)/2]);
+                        }
+                        else if(tipo == 3) {
+                            Ifilt[i*(2*num + w) + j] = V[d*d - 1];
+                            printf("%d\n", V[d*d - 1]);
+                        }
+                        k = 0;
+                    }
+                }
+            }
+        }
+    }
+
+        printf("Matriz bordeada: \n");
+    for(i = 0; i < w + 2*num; i++) {
+        for(j = 0; j < h + 2*num; j++) {
+            printf("%d ", Ifilt[i*(w + 2*num) + j]);
+        }
+        printf("\n");
+    }
+
+    printf("Matriz do meio: \n");
+    for(i = num; i < num + h; i++) {
+        for(j = num; j < num + w; j++) {
+            printf("%d ", Ifilt[i*(2*num + w) + j]);
+        }
+        printf("\n");
+    }
+    printf("\n");*/
+
+    for(i = num; i < num + h; i++) {
+        for(j = num; j < num + w; j++) {
+            printf("Matriz do elemento [%d, %d]\n", i, j);
+            for(i1 = i - num; i1 <= i + num; i1++) {
+                for(j1 = j - num; j1 <= j + num; j1++) {
+                    V[k] = Ifilt[i1*(2*num + w) + j1];
+                    k++;
+                    printf("%d ", Ifilt[i1*(2*num + w) + j1]);
+                    if(k == d*d) {
+                        printf("\n\n");
+                        selection_sort(V, d*d);
+                        printf("Vetor ordenado: ");
+                        for(l = 0; l < d*d; l++) {
+                            printf("%d ", V[l]);
+                        }
+                        //if(tipo == 1) {
+                            Ifilt[i*(2*num + w) + j] = V[0];
+                            printf("Mímino: %d\n", V[0]);
+                        //}
+                        //else if(tipo == 2) {
+                            //Ifilt[i*(2*num + w) + j] = V[(d*d - 1)/2];
+                            printf("Mediano: %d\n", V[(d*d - 1)/2]);
+                        //}
+                        //else if(tipo == 3) {
+                            //Ifilt[i*(2*num + w) + j] = V[d*d - 1];
+                            printf("Máximo: %d\n", V[d*d - 1]);
+                        //}
+                        k = 0;
+                    }
+                } 
+                printf("   k = %d", k);
+                printf("\n");
+            }
+        }
+    }
+    for(i = num; i < num + h; i++) {
+        for( j = num; j < num + w; j++) {
+            printf("%d ", Ifilt[i*(2*num + w) + j]);
+        } 
+        printf("\n");
+    }
+    printf("\n"); */
+
+
+FUNÇÃO ROTULAR:
+
+int *label_components(int *I, int w, int h, int *ncc) {
+    int *Izero, *R;
+    int i, j, i1, j1, k = 1;
+    int cont = 0, aux;
+    int *Vlin, *Vcol;
+
+    Vlin = malloc(sizeof(int)*h);
+    Vcol = malloc(sizeof(int)*w);
+    R = malloc(sizeof(int)*w*h);
+
+    for(i = 0; i < w*h; i++) {
+        R[i] = 0;
+    }
+
+    Izero = zerarbordas(I, w, h);
+
+
+    for(i = 1; i < h + 1; i++) {
+        for(j = 1; j < w + 1; j++) {
+            printf("Elemento analisado (%d, %d): %d\n", i, j, Izero[i*(w + 2) + j]);
+
+            if(Izero[i*(w + 2) + j] != 0) {
+                aux = -1;
+
+                Vlin[aux + 1] = i;
+                Vcol[aux + 1] = j;
+
+                if(R[(i - 1)*w + (j - 1)] == 0) {
+                    R[(i - 1)*w + (j - 1)] = k;
+                    k++;
+
+                    printf("Primeiro R: %d\n", R[(i - 1)*w + (j - 1)]);
+                    printf("Coordenadas (%d, %d)\n\n", i - 1, j - 1);
+                    printf("Novo K: %d", k);
+                }
+                aux++;
+                
+
+                //while(cont != 0); {
+                    for(cont = aux; cont <= aux; cont++) { 
+                        for(i1 = Vlin[cont] - 1; i1 <= Vlin[cont] + 1; i1++) {
+
+                            for(j1 = Vcol[cont] - 1; j1 <= Vcol[cont] + 1; j1++) {
+                                //printf("%d ",Izero[i1*(w + 2) + j1]);
+
+                                if((i1 != 0)&&(i1 != h + 1)&&(j1 != 0)&&(j1 != w + 1)) { 
+
+                                    if(R[(i1 - 1)*w + (j1 - 1)] == 0) {
+                                        printf("Nulo: R(%d, %d): %d\n",i1 - 1, j1 - 1, R[(i1 - 1)*w + (j1 - 1)]);
+
+                                        if(Izero[i1*(w + 2) + j1] != 0)  {    
+                                            aux++;
+                                            Vlin[aux] = i1;
+                                            Vcol[aux] = j1;
+                                        
+                                            printf("/////Coordenadas salvas: (%d, %d)\n", Vlin[aux], Vcol[aux]);
+                                            printf("AUX 1: %d\n", aux);
+                                            R[(i1 - 1)*w + (j1 - 1)] = k - 1;
+                                            printf(" Novo Nulo R(%d, %d): %d\n",i1 - 1, j1 - 1, R[(i1 - 1)*w + (j1 - 1)]);
+                                            
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+            }
+         
+
+        }
+    }
+
+
+    free(Vlin); free(Vcol); free(Izero);
+    Vlin = NULL; Vcol = NULL; Izero = NULL;
+
+    printf("Rotulação feita!\n");
+    printf("Aqui está a matriz: \n\n");
+    for(i = 0; i < h; i++) {
+        for(j = 0; j < w; j++) { 
+            printf("%d ", R[i*w + j]);
+        }
+        printf("\n");
+    }
+    return R;
+}*/
