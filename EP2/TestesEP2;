@@ -1,0 +1,99 @@
+int main() {
+    //Teste Função Localiza//
+    double xi, yi, div1;
+    double Hi, thetai;
+    double xj, yj, djv;
+    double Hj, thetaj;
+    double xk, yk, dkv;
+    double Hk, thetak;
+    double xv, yv;
+    int local;
+    
+    printf("Coordenadas Antena 1: \n");
+    scanf("%lf", &xi);
+    scanf("%lf", &yi);
+    scanf("%lf", &Hi);
+    scanf("%lf", &thetai);
+    
+    div1 = raiza((Hi*Hi*pot(cossena(thetai, EPS_COS),2)), EPS);
+    
+    printf("%lf\n", div1);
+    
+    printf("Coordenadas Antena 2: \n");
+    scanf("%lf", &xj);
+    scanf("%lf", &yj);
+    scanf("%lf", &Hj);
+    scanf("%lf", &thetaj);
+    
+    djv = raiza((Hj*Hj*pot(cossena(thetaj, EPS_COS),2)), EPS);
+    
+    printf("%lf\n", djv);
+    
+    printf("Coordenadas Antena 3: \n");
+    scanf("%lf", &xk);
+    scanf("%lf", &yk);
+    scanf("%lf", &Hk);
+    scanf("%lf", &thetak);
+    
+    dkv = raiza((Hk*Hk*pot(cossena(thetak, EPS_COS),2)), EPS);
+    
+    printf("%lf\n", dkv);
+    
+    local = localiza(xi, yi, div1, xj, yj, djv, 
+    xk, yk, dkv, &xv, &yv);
+    printf("Local: %d\n", local);
+    
+    if(local == 0){
+        printf("Não é possível calcular a localização inicial do veículo\n");
+    }
+    printf("XV: %lf\n", xv);
+    printf("YV: %lf\n", yv);
+
+    //Teste Função Intercepta//
+    double x0, y0, x1, y1, x, y;
+    double vx, vy;
+    char regiao = 'Fora da Zona de Alerta';
+    int intercept;
+
+    if((dist_ap(x1, y1) <= RAIO_ZA)&&(dist_ap(x1, y1) > RAIO_AP)) {
+        regiao = 'Zona de Alerta';
+
+        if(dist_ap(x1, y1) <= RAIO_AP) {
+            regiao = 'AP';
+        }
+        else {
+            intercept = intercepta(x0, y0, x1, y1, &x, &y);
+            if(intercept) {
+                if(dist_ap(x1, y1) > dist_ap(x0, y0)) {
+                    printf("Não há ameaça\n");
+                }
+                else {
+                    printf("Há ameaça de invasão, pelo ponto: \n");
+                    printf("x = %lf e y = %lf", x, y);
+                }
+            }
+        }
+    }
+
+    int main() {
+    //Teste Função Intercepta//
+    double x0, y0, x1, y1, x, y;
+    double DeltaT, veloc;
+    char regiao = 'F';
+    int intercept;
+    
+    scanf("%lf", &x0);
+    scanf("%lf", &y0);
+    scanf("%lf", &x1);
+    scanf("%lf", &y1);
+    scanf("%lf", &DeltaT);
+    
+    veloc = velocidade(x0, y0, x1, y1, DeltaT);
+    printf("Velocidade : %lf\n", veloc);
+    
+    printf("Distância AP: %lf\n", dist_ap(x1, y1));
+    printf("Distância Percorrida: %lf\n", (veloc*DeltaT));
+    
+    intercept = intercepta(x0, y0, x1, y1, &x, &y);
+    printf("Intercepta? %d", intercept);
+    
