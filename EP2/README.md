@@ -21,4 +21,4 @@ Para executar o programa:
 ```bash
 ./EP2
 ```
-Após executar, basta digitar o nome do arquivo que deseja usar no programa. Para comprender melhor a estrutura dos arquivos e as informações de saída, considere ler o arquivo [EP2_Enunciado.pdf](https://github.com/Od4ir/MAC-0110/blob/main/EP2/Enunciado%20e%20Exemplos/EP2_Enunciado.pdf). 
+Após executar, basta digitar o nome do arquivo que deseja usar no programa. Para comprender melhor a estrutura dos arquivos e as informações de saída, considere ler o arquivo [EP2_Enunciado.pdf](https://github.com/Od4ir/MAC-0110/blob/main/EP2/EP2_Enunciado.pdf). 

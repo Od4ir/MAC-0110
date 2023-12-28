@@ -9,6 +9,12 @@ O curso teve como propósito proporcionar uma iniciação sólida à programaç�
 **✉️ E-mail:** [od4ircode@gmail.com](mailto:od4ircode@gmail.com)
 <br>
 
+## 📥 Clonando o repositório:
+Para clonar o repositório, entre em uma pasta do seu computador e digite:
+```bash
+git clone https://github.com/Od4ir/MAC-0110.git
+```
+
 ## 📝 Trabalhos Realizados:
 - [EP1](https://github.com/Od4ir/MAC-0110/tree/main/EP1) - Jogo da Forca;
 - [EP2](https://github.com/Od4ir/MAC-0110/tree/main/EP2) - Monitoramento de Veículos Autônomos;
