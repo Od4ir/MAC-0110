@@ -10,7 +10,7 @@ O curso teve como propósito proporcionar uma iniciação sólida à programaç�
 <br>
 
 ## 📥 Clonando o repositório:
-Para clonar o repositório, entre em uma pasta do seu computador e digite:
+Para clonar o repositório, entre em uma pasta do seu computador pelo terminal e digite:
 ```bash
 git clone https://github.com/Od4ir/MAC-0110.git
 ```

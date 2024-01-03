@@ -450,5 +450,3 @@ int *label_components(int *I, int w, int h, int *ncc) {
     Vlin = NULL; Vcol = NULL; Izero = NULL;
     return R;
 }
-
-

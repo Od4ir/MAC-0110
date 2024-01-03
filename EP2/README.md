@@ -2,6 +2,8 @@
 
 O programa recebe um arquivo com dados da localização e outras informações de carros hipotéticos e devolve informações sobre esses carros. 
 
+#### 📅 Data: Junho de 2022
+
 ## 🔗 Dependências:
 Para compilar este programa, você precisará do compilador GCC (GNU Compiler Collection). Se você ainda não tiver o GCC instalado, você pode instalá-lo utilizando o seguinte comando no terminal:
 

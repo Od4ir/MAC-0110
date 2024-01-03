@@ -2,6 +2,8 @@
 
 Este é um simples jogo da forca numérica implementado em C.
 
+#### 📅 Data: Abril de 2022
+
 ## 📋 Conteúdo do Repositório:
 - Código do programa (EP1.c);
 - Enunciado do trabalho (EP1_Enunciado.pdf);
