@@ -19,4 +19,4 @@ git clone https://github.com/Od4ir/MAC-0110.git
 - [EP1](https://github.com/Od4ir/MAC-0110/tree/main/EP1) - Jogo da Forca;
 - [EP2](https://github.com/Od4ir/MAC-0110/tree/main/EP2) - Monitoramento de Veículos Autônomos;
 - [EP3](https://github.com/Od4ir/MAC-0110/tree/main/EP3) - Editor de Imagens em C;
-- [Exercícios](https://github.com/Od4ir/MAC-0110/tree/main/Exercicios)
+- [Exercícios](https://github.com/Od4ir/MAC-0110/tree/main/Exerc%C3%ADcios)
