@@ -12,11 +12,11 @@ O curso teve como propósito proporcionar uma iniciação sólida à programaç�
 ## 📥 Clonando o repositório:
 Para clonar o repositório, entre em uma pasta do seu computador pelo terminal e digite:
 ```bash
-git clone https://github.com/Od4ir/MAC-0110.git
+git clone https://github.com/Od4ir/MAC0110-Introducao-a-Computacao.git
 ```
 
 ## 📝 Trabalhos Realizados:
 - [EP1](https://github.com/Od4ir/MAC-0110/tree/main/EP1) - Jogo da Forca;
 - [EP2](https://github.com/Od4ir/MAC-0110/tree/main/EP2) - Monitoramento de Veículos Autônomos;
 - [EP3](https://github.com/Od4ir/MAC-0110/tree/main/EP3) - Editor de Imagens em C;
-- [Exercícios](https://github.com/Od4ir/MAC-0110/tree/main/Exercicios)
+- [Exercícios](https://github.com/Od4ir/MAC-0110/tree/main/Exerc%C3%ADcios)
