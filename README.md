@@ -12,7 +12,7 @@ O curso teve como propósito proporcionar uma iniciação sólida à programaç�
 ## 📥 Clonando o repositório:
 Para clonar o repositório, entre em uma pasta do seu computador pelo terminal e digite:
 ```bash
-git clone https://github.com/Od4ir/MAC0110-Introducao-a-Computacao.git
+git clone https://github.com/Od4ir/MAC0110_Introducao_a_Computacao.git
 ```
 
 ## 📝 Trabalhos Realizados:
